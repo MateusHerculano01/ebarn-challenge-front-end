@@ -1,27 +1,37 @@
-# FrontChallenge
+<div align="center">
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.9.
+<h2>Android</h2>
 
-## Development server
+<img alt="TractorBook" src=".github/android.png" width="100%">
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<h2>Desktop</h2>
 
-## Code scaffolding
+<img alt="TractorBook" src=".github/desktop.png" width="100%">
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+</div>
 
-## Build
+##  ✨ Tecnologias
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-## Running unit tests
+- [Angular](https://angular.io/)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- [Typescript](https://www.typescriptlang.org/)
 
-## Running end-to-end tests
+- [Angular Material](https://material.angular.io/)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+##  💻 Projeto
 
-## Further help
+Aplicação feita para cumprir o desafio de código do eBarn, onde foi proposto um CRUD para gerenciamento de tratores.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+##  🚀 Como executar
+
+- Clone o repositório
+
+- Instale as dependências com `yarn`
+
+- Instale o pacote `http-server`, caso ainda não tenha como global
+
+- Compile o projeto com `ng build`
+
+- Execute o projeto com  `http-server dist/front-challenge`
