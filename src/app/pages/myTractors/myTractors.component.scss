@@ -1,0 +1,47 @@
+.search-container {
+  display: flex;
+  margin-bottom: 20px;
+
+  .input-container {
+    flex: 1;
+    margin-right: 20px;
+    font-size: 16px;
+  }
+
+  button {
+    max-height: 60px;
+  }
+}
+
+.my-tractors-card-about-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  width: 100%;
+  img {
+    display: block;
+    max-width: 150px;
+    width: 130px;
+    height: 130px;
+    border-radius: 6px;
+    margin-right: 10px;
+  }
+  .my-tractors-card-about-group {
+    padding-top: 10px;
+    .mat-card-title {
+      text-transform: capitalize !important;
+    }
+  }
+}
+
+.my-tractors-card-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.my-tractors-card-main {
+  margin: 10px 0;
+}

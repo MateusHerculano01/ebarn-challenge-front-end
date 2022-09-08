@@ -1,0 +1,48 @@
+<mat-card class="tractor-card-main">
+
+  <ng-container *ngIf="!isEditableCard">
+    <div class="tractor-card-about-user">
+      <img src={{UrlPhotoDefault}} />
+      <span class="tractor-card-name-user">{{tractor.user?.name | titlecase}}</span>
+      <span>{{publishedDateRelativeToNow}}</span>
+    </div>
+  </ng-container>
+
+  <div class="tractor-card-container">
+    <div class="tractor-card-about-container">
+      <img mat-card-sm-image src={{tractor.photoUrl}}>
+      <div class="tractor-card-about-group">
+        <mat-card-title>{{tractor.modelName | titlecase}}</mat-card-title>
+        <div class="tractor-card-about">
+          <strong>Marca: </strong>
+          <span>{{tractor.manufacturer | titlecase}}</span>
+        </div>
+        <div class="tractor-card-about">
+          <strong>Ano: </strong>
+          <span>{{tractor.year}}</span>
+        </div>
+        <div class="tractor-card-about">
+          <strong>Potência: </strong>
+          <span>{{tractor.power}}</span>
+        </div>
+      </div>
+    </div>
+
+    <ng-container *ngIf="isEditableCard || user && user?._id == tractor.user?._id">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button (click)="handleEditTractor.emit(tractor)" mat-menu-item>
+          <mat-icon>edit</mat-icon>
+          <span>Editar</span>
+        </button>
+        <button (click)="handleDeleteTractor.emit(tractor)" mat-menu-item class="tractor-delete-button">
+          <mat-icon>delete</mat-icon>
+          <span>Deletar</span>
+        </button>
+      </mat-menu>
+    </ng-container>
+
+  </div>
+</mat-card>

@@ -1,0 +1,44 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" appearance="fill" class="register-form">
+  <mat-card>
+    <h1>Crie sua conta</h1>
+
+    <mat-form-field class="register-content-full-width" appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input type="text" matInput formControlName="name">
+
+      <mat-error>
+        <app-campo-control-error [showError]="checkInvalidField('name')" msgError="Nome inválido">
+        </app-campo-control-error>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="register-content-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email">
+
+      <mat-error>
+        <app-campo-control-error [showError]="checkInvalidField('email')" msgError="Email inválido">
+        </app-campo-control-error>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="register-content-full-width" appearance="fill">
+      <mat-label>Senha</mat-label>
+      <input type="password" matInput formControlName="password">
+
+      <mat-error>
+        <app-campo-control-error [showError]="checkInvalidField('password')" msgError="Senha inválida">
+        </app-campo-control-error>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="register-action-buttons">
+      <a mat-button color="primary" [routerLink]="['/login']">
+        Entre na sua conta
+      </a>
+      <button type="submit" mat-flat-button color="primary" [disabled]="!form.valid">
+        Registrar
+      </button>
+    </div>
+  </mat-card>
+</form>

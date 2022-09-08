@@ -1,0 +1,16 @@
+.register-form {
+  width: 100%;
+}
+
+.register-content-full-width {
+  width: 100%;
+}
+
+.register-action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  button {
+    margin-right: 5px;
+  }
+}

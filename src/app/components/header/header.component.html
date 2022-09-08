@@ -1,0 +1,31 @@
+<div class="header-container">
+  <mat-toolbar color="primary" class="header">
+    <div>
+      <span>TractorBook</span>
+    </div>
+
+    <ng-container *ngIf="showMenu">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['/home']">
+          <mat-icon>newspaper</mat-icon>
+          <span>Todos os tratores</span>
+        </button>
+        <button mat-menu-item [routerLink]="['/my-tractors']">
+          <mat-icon>settings</mat-icon>
+          <span>Meus tratores</span>
+        </button>
+        <button mat-menu-item (click)="handleLogout()">
+          <mat-icon>logout</mat-icon>
+          <span>Sair</span>
+        </button>
+      </mat-menu>
+    </ng-container>
+  </mat-toolbar>
+
+  <div class="header-sidenav-content">
+    <ng-content></ng-content>
+  </div>
+</div>

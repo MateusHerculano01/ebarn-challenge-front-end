@@ -1,0 +1,5 @@
+<div class="main">
+  <app-header [showMenu]="(isUserAuthenticated$ | async)">
+    <router-outlet></router-outlet>
+  </app-header>
+</div>

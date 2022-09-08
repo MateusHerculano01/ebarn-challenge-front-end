@@ -1,0 +1,67 @@
+<form [formGroup]="tractorForm" #formDir="ngForm" (ngSubmit)="onSubmit()" appearance="fill" class="tractor-form">
+  <h1>{{this.data ? 'Editar' : 'Novo'}} trator</h1>
+
+  <mat-form-field class="tractor-content-full-width" appearance="fill">
+    <mat-label>Fabricante</mat-label>
+    <input type="text" matInput formControlName="manufacturer">
+
+    <mat-error>
+      <app-campo-control-error [showError]="checkInvalidField('manufacturer') && formDir.submitted"
+        msgError="Fabricante precisa estar preenchido">
+      </app-campo-control-error>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="tractor-content-full-width" appearance="fill">
+    <mat-label>Modelo</mat-label>
+    <input type="text" matInput formControlName="modelName">
+
+    <mat-error>
+      <app-campo-control-error [showError]="checkInvalidField('modelName')" msgError="Modelo precisa estar preenchido">
+      </app-campo-control-error>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="tractor-content-full-width" appearance="fill">
+    <mat-label>Potência</mat-label>
+    <input type="text" matInput formControlName="power">
+
+    <mat-error>
+      <app-campo-control-error [showError]="checkInvalidField('power')" msgError="Potência precisa estar preenchido">
+      </app-campo-control-error>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="tractor-content-full-width" appearance="fill">
+    <mat-label>Ano</mat-label>
+    <input type="number" matInput formControlName="year">
+
+    <mat-error>
+      <app-campo-control-error [showError]="checkInvalidField('year')" msgError="Ano precisa estar preenchido">
+      </app-campo-control-error>
+    </mat-error>
+  </mat-form-field>
+
+  <div class="tractor-content-full-width" appearance="fill">
+    <button type="button" mat-raised-button (click)="fileInput.click()">
+      <mat-icon>photo_camera</mat-icon>
+      <span>{{this.data ? 'Editar foto' : 'Adicionar uma foto'}}</span>
+    </button>
+
+    <div class="tractor-image-preview">
+      <input hidden (change)="onFileChange($event)" #fileInput type="file" id="file">
+      <img [src]="imagePreview" *ngIf="imagePreview" />
+    </div>
+  </div>
+
+  <div [align]="'end'">
+    <button mat-button [mat-dialog-close]="false">
+      Cancelar
+    </button>
+    <button type="submit" mat-flat-button color="primary" cdkFocusInitial>
+      Salvar
+    </button>
+  </div>
+
+
+</form>

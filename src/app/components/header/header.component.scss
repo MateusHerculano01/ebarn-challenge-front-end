@@ -1,0 +1,27 @@
+.header-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.header-sidenav-content {
+  padding: 20px;
+}
+
+.header-sidenav {
+  display: flex;
+  flex: 1;
+  flex-direction: column !important;
+  padding: 2px;
+  width: 10vw;
+  min-width: 200px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+
+  div {
+    flex: 1;
+    text-align: center;
+  }
+}

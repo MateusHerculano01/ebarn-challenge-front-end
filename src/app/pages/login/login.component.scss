@@ -1,0 +1,16 @@
+.login-form {
+  width: 100%;
+}
+
+.login-content-full-width {
+  width: 100%;
+}
+
+.login-action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  button {
+    margin-right: 5px;
+  }
+}

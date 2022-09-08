@@ -1,0 +1,17 @@
+<div class="search-container">
+  <mat-form-field class="input-container" appearance="fill">
+    <mat-label>Pesquise por um trator</mat-label>
+    <input type="text" [formControl]="searchControl" matInput>
+  </mat-form-field>
+</div>
+
+<ng-container *ngFor="let tractor of (tractors$ | async)">
+  <app-tractor-card [tractor]="tractor" [user]="(user$ | async)" (handleDeleteTractor)="handleDeleteTractor($event)"
+    (handleEditTractor)="handleEditTractor($event)">
+  </app-tractor-card>
+</ng-container>
+
+<app-tractor-not-found [noTractorFound]="tractorNotFound() && !(isLoading$ | async)">
+</app-tractor-not-found>
+
+<app-loading-spinner [isLoading]="(isLoading$ | async)"></app-loading-spinner>
